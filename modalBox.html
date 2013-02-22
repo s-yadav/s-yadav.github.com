@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="sudhanshu-yadav.github.com : " />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/style.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/modalBoxDemo.css">
+	
+    <title>modalBox.js</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/sudhanshu-yadav">View on GitHub</a>
+
+          <h1 id="project_title"><a href="index.html">Utility plugins</a></h1>
+          <h2 id="project_tagline"></h2>
+
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+	 <section id="main_content" class="inner pluginWikiWrap">
+       <div id="nav_Wrap">
+      <ul>
+      <li id="navIntro" linkId="intro" class="current">Model Box</li>
+      <li id="navDemo"  linkId="demo">Examples</li>
+      <li id="navDoc"  linkId="documentation">Documentation</li>
+      <li id="navConcept"  linkId="concept">Concept</li>
+     </ul>
+      </div>
+      <div id="content">
+      <div id="intro">
+        <h3>modalBox.js</h3>
+        <p>Modal window has become a very popular way of showing information in detail, and getting needed input while blocking the main application flow. There are large numbers of attractive plugin available over the internet with lot of options. But the question is do we need that all?          </p>
+        <p>Fact is we only use 30 to 40 % of that plugin and for that 30 to 40 % we compromise to use a large size plugin. In internet world size matters a lot. Least the size of your page greater the loading speed.</p>
+        <p> So why not use a plugin which is much smaller and have options which we need the most. modalBox.js is a very light weight plugin <span class="projectDesc">packed with only most used features</span> Its overall size is around 5.3 kb ( 2.5 kb minified).</p>
+		<a href="https://github.com/s-yadav/modalBox.js"><div class="downloadplugin">Download</div></a>
+      </div>
+      <div id="demo">
+      <h3>Examples</h3>
+<strong>A simplest one</strong><br />
+<pre>
+<code>
+$('.modalBox').modalBox();
+//or
+$('.modalBox').modalBox('open');
+</code>
+</pre>
+<input id="demo1" type="button" value="Click me for demo"/><br />
+<br />
+<strong>Modal box with defined width and height</strong><br />
+<pre>
+<code>
+$('.modalBox').modalBox({
+'width':'500px',
+'height':'500px'
+});
+</code>
+</pre>
+<input id="demo2" type="button" value="Click me for demo"/><br />
+
+<strong><br />
+Modal box with defined top and left</strong><br />
+<pre>
+<code>
+$('.modalBox').modalBox({
+'top':'100px',
+'left':'100px'
+});
+</code>
+</pre>
+<input id="demo3" type="button" value="Click me for demo"/><br />
+
+<br />
+<strong>Modal box with all close options enable</strong><br />
+<pre>
+<code>
+$('.modalBox').modalBox({
+		iconImg:'images/x.png',
+		iconClose:true,
+		keyClose:true,
+		bodyClose:true
+});
+</code>
+</pre>
+<input id="demo4" type="button" value="Click me for demo"/><br />
+
+<br />
+<strong>Modal box with all and global close button</strong><br />
+<pre>
+<code>
+$('.modalBox').modalBox({
+		iconImg:'images/x.png',
+		keyClose:true,
+		iconClose:true,
+		bodyClose:true
+});
+</code>
+</pre>
+<input id="demo5" type="button" value="Click me for demo"/><br />
+
+<br />
+<strong>Modal box with all callback functions</strong><br />
+<pre>
+<code>
+$('.modalBox').modalBox({
+		onOpen:function(){
+			alert('successfully open');
+			},
+		onClose:function(){
+			alert('successfully close');
+			}
+});
+</code>
+</pre>
+<input id="demo6" type="button" value="Click me for demo"/><br />
+<br />
+<strong>Mutiple modal box functions</strong><br />
+<pre>
+<code>
+$('.modalBox').modalBox({
+        width:300,
+        height:300,
+        top:100,
+        left:100,
+        iconImg:'images/x.png',
+        iconClose:true,
+});
+
+$('.modalBox2').modalBox({
+        width:300,
+        height:300,
+        top:100,
+        left:500,
+        iconImg:'images/x.png',
+        iconClose:true,
+});
+</code>
+</pre>
+<input id="demo7" type="button" value="Click me for demo"/>
+      </div>
+      <div id="documentation">
+      <h3>Documentation</h3>
+      <strong>Options</strong><br />
+      <table width="100%" border="1">
+  <thead>
+  <tr>
+    <td>Options</td>
+    <td>Default</td>
+    <td>Allowed</td>
+    <td>Description</td>
+  </tr>
+  </thead>
+  <tr>
+    <td>width</td>
+    <td>'auto' </td>
+    <td>Width in any unit(px,%,em)</td>
+    <td>Change the width of modal box. (Plugin will not do any calculation for width if defined.)</td>
+  </tr>
+  <tr>
+    <td>height</td>
+    <td>'auto'</td>
+    <td>Height in any unit(px,%,em)</td>
+    <td>Change the width of modal box. (Plugin will not do any calculation for height if defined.)</td>
+  </tr>
+  <tr>
+    <td>top</td>
+    <td>'auto' (50%)</td>
+    <td>Top in any unit(px,%,em)</td>
+    <td>Change the top position of modal box. (Plugin will not do any calculation for margin top if top is defined.)</td>
+  </tr>
+  <tr>
+    <td>left</td>
+    <td>'auto' (50%)</td>
+    <td>Left in any unit(px,%,em)</td>
+    <td>Change the left position of modal box. (Plugin will not do any calculation for margin left if left is defined.)</td>
+  </tr>
+  <tr>
+    <td>overlay</td>
+    <td>true</td>
+    <td>true,false</td>
+    <td>Overlay the body if overlay is true.(have class iw-modalOverlay)</td>
+  </tr>
+  <tr>
+    <td>iconClose</td>
+    <td>false</td>
+    <td>true,false</td>
+    <td>Show a close icon on top right corner to close modal box.</td>
+  </tr>
+  <tr>
+    <td>keyClose</td>
+    <td>true</td>
+    <td>true,false</td>
+    <td>Activate closing of modal box by pressing esc key while modal box is open.</td>
+  </tr>
+  <tr>
+    <td>bodyClose</td>
+    <td>true</td>
+    <td>true,false</td>
+    <td>Activate closing of modal box by clicking outside of modal box.</td>
+  </tr>
+  <tr>
+    <td>iconImg</td>
+    <td>''</td>
+    <td>Image source</td>
+    <td>Source of icon image to display. (have class iw-closeImg)</td>
+  </tr>
+</table>
+<br />
+<strong>Callback functions</strong><br />
+<table width="100%" border="1">
+  <thead>
+  <tr>
+    <td>Function</td>
+    <td>Description</td>
+  </tr>
+</thead>
+
+  <tr>
+    <td>onOpen</td>
+    <td>This callback function will be fired just after modal box is successfully open.</td>
+  </tr>
+  <tr>
+    <td>onClose</td>
+    <td>This callback function will be fired just after modal box is successfully close.</td>
+  </tr>
+</table>
+<p><strong>Methods</strong><br />
+  1. Plugin Method : Passed as first argument of plugin(If need to define).<br />
+  ex: $('.modalBox').modalBox('close');
+  <br />
+</p>
+<table width="100%" border="1">
+    <thead>
+
+  <tr>
+    <td>Method</td>
+    <td>Description</td>
+  </tr>
+  </thead>
+
+  <tr>
+    <td>open</td>
+    <td>Method to open modal box. It is a default method ,so if no method is defined open will be called.</td>
+  </tr>
+  <tr>
+    <td>close</td>
+    <td>Method to close modal box(hide the modal box). Remove all events and element associated with modal box(except modal box itself.)</td>
+  </tr>
+</table>
+<p>  2. Global Method: <br />
+  ex: $.modalBox.close();<br />
+</p>
+<table width="100%" border="1">
+  <thead>
+
+  <tr>
+    <td>Method</td>
+    <td>Description</td>
+  </tr>
+  </thead>
+
+  <tr>
+    <td>close</td>
+    <td>Close all currently opened modal box. Called by $.modalBox.close().</td>
+  </tr>
+</table>
+
+      </div>
+      <div id="concept">
+       <!-- Concept defination start-->
+        <h3>Concept</h3>
+       <h3>What we need for our plugin. ?</h3>
+    1. A method to open it.<br />
+    2. A method to close it.<br />
+    3. Some options to change the behavior of our plugin. (like modal size, modal position and overlay).<br />
+  <p>Lets start creating our plugin.
+<h3>1. Setting structure of our plugin.</h3>
+  Remember of proper name-spacing of your plugin so that your plugin will not conflict with any other code.<br />
+  Let's name our plugin as modalBox. I will append &quot;iw-&quot; to every class which i will use for my plugin.<br />
+  <br />
+  <strong>Structure Code</strong><br />
+  <div style="background: #f8f8f8; overflow:auto;width:auto;color:black;background:white;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41</pre></td><td><pre style="margin: 0; line-height: 125%">;(<span style="color: #AA22FF; font-weight: bold">function</span> ($, <span style="color: #AA22FF">window</span>, <span style="color: #AA22FF">document</span>, <span style="color: #AA22FF; font-weight: bold">undefined</span>) {
+    $.fn.modalBox <span style="color: #666666">=</span> <span style="color: #AA22FF; font-weight: bold">function</span> (method, option) {
+        <span style="color: #AA22FF; font-weight: bold">if</span> (methods[method]) {
+            methods[method].call(<span style="color: #AA22FF; font-weight: bold">this</span>, option);
+        } <span style="color: #AA22FF; font-weight: bold">else</span> <span style="color: #AA22FF; font-weight: bold">if</span> (<span style="color: #AA22FF; font-weight: bold">typeof</span> method <span style="color: #666666">===</span> <span style="color: #BB4444">&#39;object&#39;</span> <span style="color: #666666">||</span> <span style="color: #666666">!</span>method) {
+            <span style="color: #008800; font-style: italic">//we will add a default method in the case no method is defined</span>
+            methods. <span style="color: #008800; font-style: italic">/*Default mehthod*/</span>
+            .call(<span style="color: #AA22FF; font-weight: bold">this</span>, method);
+        }
+        <span style="color: #AA22FF; font-weight: bold">return</span> <span style="color: #AA22FF; font-weight: bold">this</span>;
+    };
+    <span style="color: #008800; font-style: italic">//a object which will store our global method and defaults</span>
+    $.modalBox <span style="color: #666666">=</span> {};
+
+    <span style="color: #008800; font-style: italic">/*default options</span>
+<span style="color: #008800; font-style: italic">	accessable globaly so you can change default option for all modal box.</span>
+<span style="color: #008800; font-style: italic">	example : $.modalBox.defaults.overlay=true; so now overlay will be default for all modal box</span>
+<span style="color: #008800; font-style: italic">	*/</span>
+    $.modalBox.defaults <span style="color: #666666">=</span> {
+
+    }
+
+    <span style="color: #008800; font-style: italic">/* we will define three category of method </span>
+<span style="color: #008800; font-style: italic">   1. Global method : We will keep all method which are globally accessable to change </span>
+<span style="color: #008800; font-style: italic">   the state of modal box (either all or one) which can be invoked from outside of plugin.</span>
+<span style="color: #008800; font-style: italic">   </span>
+<span style="color: #008800; font-style: italic">   2. Internal method : Methods which are used internally by plugin.</span>
+<span style="color: #008800; font-style: italic">   </span>
+<span style="color: #008800; font-style: italic">   3. Plugin method: Methods which can be accessed by passing name in the first parameter of plugin .*/</span>
+
+    <span style="color: #008800; font-style: italic">//global methods </span>
+
+
+    <span style="color: #008800; font-style: italic">//internal method</span>
+
+
+    <span style="color: #008800; font-style: italic">//plugin method</span>
+    <span style="color: #AA22FF; font-weight: bold">var</span> methods <span style="color: #666666">=</span> {
+
+    }
+})(jQuery, <span style="color: #AA22FF">window</span>, <span style="color: #AA22FF">document</span>);
+</pre></td></tr></table></div>
+
+
+  <p>You would also like to see <a href="http://docs.jquery.com/Plugins/Authoring">Plugin Authoring</a> and <a href="http://coding.smashingmagazine.com/2011/10/11/essential-jquery-plugin-patterns/">Common plugin pattern</a></p>
+  <p><h3>2. Implementing open method </h3>
+  <ul>
+    <li> We will create a plugin method to open our modal box.</li>
+    <li> We will give some configuration option to change its default behavior.</li>
+    <li> We will also give option of overlaying the document.</li>
+  </ul>
+  </p>
+  <p><strong>The logic in our open method is so simple,</strong>
+  <ul>
+    <li>If no size and position property is defined we will show it on center of the window.</li>
+    <li>If modal size is more than window size reduce it to window size.</li>
+    <li>First apply width and height to box so we can get exact size of modal box in pixel.</li>
+    <li>We will follow a very common way to center our modal box. Give left and   top 50% and margin left and top equals to half of width and height </li>
+    <li>If left and top is defined use it and give no margin.</li>
+    <li>We also need to define function to add overlay.</li>
+  </ul>
+  </p>
+  <div style="background: #f8f8f8; overflow:auto;width:auto;color:black;background:white;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-style: italic">// open method along with some basic configuring options</span>
+;(<span style="color: #AA22FF; font-weight: bold">function</span> ($, <span style="color: #AA22FF">window</span>, <span style="color: #AA22FF">document</span>, <span style="color: #AA22FF; font-weight: bold">undefined</span>) {
+    $.fn.modalBox <span style="color: #666666">=</span> <span style="color: #AA22FF; font-weight: bold">function</span> (method, option) {
+        <span style="color: #AA22FF; font-weight: bold">if</span> (methods[method]) {
+            methods[method].call(<span style="color: #AA22FF; font-weight: bold">this</span>, option);
+        } <span style="color: #AA22FF; font-weight: bold">else</span> <span style="color: #AA22FF; font-weight: bold">if</span> (<span style="color: #AA22FF; font-weight: bold">typeof</span> method <span style="color: #666666">===</span> <span style="color: #BB4444">&#39;object&#39;</span> <span style="color: #666666">||</span> <span style="color: #666666">!</span>method) {
+            <span style="color: #008800; font-style: italic">//we will make open as our defaul method</span>
+            methods.open.call(<span style="color: #AA22FF; font-weight: bold">this</span>, method);
+        }
+        <span style="color: #AA22FF; font-weight: bold">return</span> <span style="color: #AA22FF; font-weight: bold">this</span>;
+    };
+    $.modalBox <span style="color: #666666">=</span> {};
+
+    <span style="color: #008800; font-style: italic">//default options</span>
+
+    $.modalBox.defaults <span style="color: #666666">=</span> {
+        <span style="color: #008800; font-style: italic">//all properties will  with unit like 10px or 10%</span>
+        width<span style="color: #666666">:</span> <span style="color: #BB4444">&#39;auto&#39;</span>,
+        height<span style="color: #666666">:</span> <span style="color: #BB4444">&#39;auto&#39;</span>,
+        left<span style="color: #666666">:</span> <span style="color: #BB4444">&#39;auto&#39;</span>,
+        top<span style="color: #666666">:</span> <span style="color: #BB4444">&#39;auto&#39;</span>,
+        overlay<span style="color: #666666">:</span> <span style="color: #AA22FF; font-weight: bold">true</span>
+    }
+
+    <span style="color: #008800; font-style: italic">//global methods</span>
+
+    <span style="color: #008800; font-style: italic">//internal methods</span>
+    <span style="color: #008800; font-style: italic">// add overlay</span>
+    <span style="color: #AA22FF; font-weight: bold">function</span> addOverlay() {
+        $(<span style="color: #BB4444">&#39;body&#39;</span>).append(<span style="color: #BB4444">&#39;&lt;div class=&quot;iw-modalOverlay&quot;&gt;&lt;/div&gt;&#39;</span>);
+        $(<span style="color: #BB4444">&#39;.iw-modalOverlay&#39;</span>).css({
+            display<span style="color: #666666">:</span> <span style="color: #BB4444">&#39;block&#39;</span>,
+            width<span style="color: #666666">:</span> <span style="color: #BB4444">&#39;100%&#39;</span>,
+            height<span style="color: #666666">:</span> <span style="color: #BB4444">&#39;100%&#39;</span>,
+            position<span style="color: #666666">:</span> <span style="color: #BB4444">&#39;fixed&#39;</span>,
+            top<span style="color: #666666">:</span> <span style="color: #666666">0</span>,
+            left<span style="color: #666666">:</span> <span style="color: #666666">0</span>,
+            display<span style="color: #666666">:</span> <span style="color: #BB4444">&#39;block&#39;</span>,
+            <span style="color: #BB4444">&#39;z-index&#39;</span><span style="color: #666666">:</span> <span style="color: #BB4444">&#39;1000&#39;</span>
+
+        });
+    }
+
+    <span style="color: #008800; font-style: italic">//plugin methods</span>
+    <span style="color: #AA22FF; font-weight: bold">var</span> methods <span style="color: #666666">=</span> {
+        <span style="color: #008800; font-style: italic">/* open method. 	*/</span>
+        open<span style="color: #666666">:</span> <span style="color: #AA22FF; font-weight: bold">function</span> (option) {
+            option <span style="color: #666666">=</span> $.extend({}, $.modalBox.defaults, option);
+            <span style="color: #008800; font-style: italic">// $.extend will merge passed options with defalut option . </span>
+
+            <span style="color: #AA22FF; font-weight: bold">var</span> elm <span style="color: #666666">=</span> <span style="color: #AA22FF; font-weight: bold">this</span>,
+                <span style="color: #008800; font-style: italic">//to calculate width and height of modal box</span>
+                elmWidth <span style="color: #666666">=</span> elm.width(),
+                elmHeight <span style="color: #666666">=</span> elm.height(),
+                elmWidthO <span style="color: #666666">=</span> elm.outerWidth(),
+                elmHeightO <span style="color: #666666">=</span> elm.outerHeight(),
+                windowWidth <span style="color: #666666">=</span> $(<span style="color: #AA22FF">window</span>).width(),
+                windowHeight <span style="color: #666666">=</span> $(<span style="color: #AA22FF">window</span>).height(),
+                width <span style="color: #666666">=</span> option.width <span style="color: #666666">!=</span> <span style="color: #BB4444">&#39;auto&#39;</span> <span style="color: #666666">?</span> option.width <span style="color: #666666">:</span> <span style="color: #AA22FF">Math</span>.min(elmWidthO, windowWidth) <span style="color: #666666">-</span> (elmWidthO <span style="color: #666666">-</span> elmWidth),
+                height <span style="color: #666666">=</span> option.height <span style="color: #666666">!=</span> <span style="color: #BB4444">&#39;auto&#39;</span> <span style="color: #666666">?</span> option.height <span style="color: #666666">:</span> <span style="color: #AA22FF">Math</span>.min(elmHeightO, windowHeight) <span style="color: #666666">-</span> (elmHeightO <span style="color: #666666">-</span> elmHeight);
+
+            <span style="color: #008800; font-style: italic">//store its original width to element data so later we can regain its original size</span>
+            elm.data(<span style="color: #BB4444">&#39;iw-size&#39;</span>, {
+                <span style="color: #BB4444">&#39;width&#39;</span><span style="color: #666666">:</span> elmWidth,
+                <span style="color: #BB4444">&#39;height&#39;</span><span style="color: #666666">:</span> elmHeight
+            })
+            <span style="color: #008800; font-style: italic">//to add modalBox class</span>
+            .addClass(<span style="color: #BB4444">&#39;iw-modalBox&#39;</span>)
+            <span style="color: #008800; font-style: italic">//apply new size</span>
+            .css({
+                width<span style="color: #666666">:</span> width,
+                height<span style="color: #666666">:</span> height,
+                position<span style="color: #666666">:</span> <span style="color: #BB4444">&#39;fixed&#39;</span>,
+            });
+        });
+
+
+    <span style="color: #008800; font-style: italic">//to calculate left and top and margin</span>
+    <span style="color: #AA22FF; font-weight: bold">var</span> top <span style="color: #666666">=</span> <span style="color: #BB4444">&#39;50%&#39;</span>,
+        left <span style="color: #666666">=</span> <span style="color: #BB4444">&#39;50%&#39;</span>,
+        marginLeft <span style="color: #666666">=</span> elm.width() <span style="color: #666666">/</span> <span style="color: #666666">2</span>,
+        marginTop <span style="color: #666666">=</span> elm.height() <span style="color: #666666">/</span> <span style="color: #666666">2</span>;
+
+    <span style="color: #AA22FF; font-weight: bold">if</span> (option.left <span style="color: #666666">!=</span> <span style="color: #BB4444">&#39;auto&#39;</span>) {
+        left <span style="color: #666666">=</span> option.left;
+        marginLeft <span style="color: #666666">=</span> <span style="color: #BB4444">&#39;0&#39;</span>;
+    }
+    <span style="color: #AA22FF; font-weight: bold">if</span> (option.top <span style="color: #666666">!=</span> <span style="color: #BB4444">&#39;auto&#39;</span>) {
+        top <span style="color: #666666">=</span> option.top;
+        marginTop <span style="color: #666666">=</span> <span style="color: #BB4444">&#39;0&#39;</span>
+    }
+
+    elm.css({
+        top<span style="color: #666666">:</span> top,
+        left<span style="color: #666666">:</span> left,
+        <span style="color: #BB4444">&#39;margin-left&#39;</span><span style="color: #666666">:</span> <span style="color: #666666">-</span>marginLeft,
+        <span style="color: #BB4444">&#39;margin-top&#39;</span><span style="color: #666666">:</span> <span style="color: #666666">-</span>marginTop,
+        <span style="color: #BB4444">&#39;display&#39;</span><span style="color: #666666">:</span> <span style="color: #BB4444">&#39;block&#39;</span>,
+        <span style="color: #BB4444">&#39;z-index&#39;</span><span style="color: #666666">:</span> <span style="color: #BB4444">&#39;99999&#39;</span>
+    });
+
+    <span style="color: #008800; font-style: italic">//if overlay is true add overlay.</span>
+    <span style="color: #AA22FF; font-weight: bold">if</span> (option.overlay) {
+        addOverlay();
+    }
+
+}
+}
+})(jQuery, <span style="color: #AA22FF">window</span>, <span style="color: #AA22FF">document</span>);
+</pre></td></tr></table></div>
+
+
+    <h3>3. Implementing close method.</h3>
+    For   a better user experience we need to give different way to close our   modal box. Even though we will give all as option so user can choose   what he need among them.<br />
+    <ul>
+    <li><strong> A close button on the top right corner.</strong>
+      <ul>
+    <li>For this we need two options, flag  (default to false) to show image and other src of image .</li>
+    <li>Image   can be only shown when modal box is less than window height. (we will   condition for max width and height of modal box is 50 px less window   height assuming images max size will be 50 px).</li>
+</ul></li>
+    <li><strong> By click on outside of modal box.</strong>
+<ul>
+    <li>We need to add on flag as option which will define weather clicking   outside of modal box we need to close it or not. (default to true).</li>
+    <li>We will create overlay with no background, if  overlay is set to false   and we will add close event on overlay instead on body to escape from   bubbling of event to body.</li>
+    </ul>
+</li>
+    <li><strong> Key event to close(Esc key)</strong>
+<ul><li>
+    We will also give a close event on esc key press with a flag to activate/deactivate it (default to true).<br />
+    </li>
+  </ul>
+</li>
+    <li><strong>Close method (globally accessible) .</strong>
+<ul><li>
+    We will add a close method which will close all modal box open at a time.<br />
+ 	</li></ul>
+</li>
+    <p><br />
+    **We will keep all event handler in internal method.<br />
+</ul>
+    This all method will call plugin close method which you can call for a particular modal box.  <br />
+    </p>
+    <p><strong>On close we need to</strong></p>
+    <ul>
+    <li> Unbind all event bound to html and window.</li>
+    <li> Remove overlay if present.</li>
+    <li> Hide modal box.</li>
+    <li> Remove close image if present.</li>
+	</ul>
+    
+      <p><h3>4. Implementing callback function :</h3>
+  </span>
+  <p>Callback functions are the most important part of a plugin as they give you access in the middle of execution of plugin.<br />
+  We will define two callback functions in for our two main methods (open , close)<br />
+  1. <strong>onOpen</strong> : Which is called when a modal box opened.  <br />
+  2. <strong>onClose</strong> : Which is called when modal box is successfully closed.</p>
+<p>*Inside a callback function this will point to selector jquery object.<br />
+    <br />
+  </p>
+<div style="background: #f8f8f8; overflow:auto;width:auto;color:black;background:white;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209</pre></td><td><pre style="margin: 0; line-height: 125%">;(<span style="color: #AA22FF; font-weight: bold">function</span> ($, <span style="color: #AA22FF">window</span>, <span style="color: #AA22FF">document</span>, <span style="color: #AA22FF; font-weight: bold">undefined</span>) {
+    $.fn.modalBox <span style="color: #666666">=</span> <span style="color: #AA22FF; font-weight: bold">function</span> (method, option) {
+
+        <span style="color: #AA22FF; font-weight: bold">if</span> (methods[method]) {
+            methods[method].call(<span style="color: #AA22FF; font-weight: bold">this</span>, option);
+        } <span style="color: #AA22FF; font-weight: bold">else</span> <span style="color: #AA22FF; font-weight: bold">if</span> (<span style="color: #AA22FF; font-weight: bold">typeof</span> method <span style="color: #666666">===</span> <span style="color: #BB4444">&#39;object&#39;</span> <span style="color: #666666">||</span> <span style="color: #666666">!</span>method) {
+            methods.open.call(<span style="color: #AA22FF; font-weight: bold">this</span>, method);
+        }
+        <span style="color: #AA22FF; font-weight: bold">return</span> <span style="color: #AA22FF; font-weight: bold">this</span>;
+    };
+    $.modalBox <span style="color: #666666">=</span> {};
+
+    <span style="color: #008800; font-style: italic">//default options</span>
+
+    $.modalBox.defaults <span style="color: #666666">=</span> {
+        <span style="color: #008800; font-style: italic">//all properties with unit like 10px</span>
+        width<span style="color: #666666">:</span> <span style="color: #BB4444">&#39;auto&#39;</span>,
+        height<span style="color: #666666">:</span> <span style="color: #BB4444">&#39;auto&#39;</span>,
+        left<span style="color: #666666">:</span> <span style="color: #BB4444">&#39;auto&#39;</span>,
+        top<span style="color: #666666">:</span> <span style="color: #BB4444">&#39;auto&#39;</span>,
+        overlay<span style="color: #666666">:</span> <span style="color: #AA22FF; font-weight: bold">true</span>,
+        iconClose<span style="color: #666666">:</span> <span style="color: #AA22FF; font-weight: bold">false</span>,
+        keyClose<span style="color: #666666">:</span> <span style="color: #AA22FF; font-weight: bold">true</span>,
+        bodyClose<span style="color: #666666">:</span> <span style="color: #AA22FF; font-weight: bold">true</span>,
+        iconImg<span style="color: #666666">:</span> <span style="color: #BB4444">&#39;image/closeIcon.png&#39;</span>,
+
+        <span style="color: #008800; font-style: italic">//callback function</span>
+        onOpen<span style="color: #666666">:</span> <span style="color: #AA22FF; font-weight: bold">function</span> () {},
+        onClose<span style="color: #666666">:</span> <span style="color: #AA22FF; font-weight: bold">function</span> () {},
+    }
+
+    <span style="color: #008800; font-style: italic">//global methods</span>
+
+    <span style="color: #008800; font-style: italic">//to close all modal box</span>
+    $.modalBox.close <span style="color: #666666">=</span> <span style="color: #AA22FF; font-weight: bold">function</span> () {
+        $(<span style="color: #BB4444">&#39;.iw-modalBox&#39;</span>).each(<span style="color: #AA22FF; font-weight: bold">function</span> () {
+            methods[<span style="color: #BB4444">&#39;close&#39;</span>].call($(<span style="color: #AA22FF; font-weight: bold">this</span>));
+        });
+
+    }
+
+
+    <span style="color: #008800; font-style: italic">//internal method</span>
+    <span style="color: #AA22FF; font-weight: bold">var</span> keyEvent <span style="color: #666666">=</span> <span style="color: #AA22FF; font-weight: bold">function</span> (e) {
+        <span style="color: #AA22FF; font-weight: bold">var</span> keyCode <span style="color: #666666">=</span> e.keyCode;
+        <span style="color: #008800; font-style: italic">//check for esc key is pressed.</span>
+        <span style="color: #AA22FF; font-weight: bold">if</span> (keyCode <span style="color: #666666">==</span> <span style="color: #666666">27</span>) {
+            $.modalBox.close();
+        }
+    };
+    <span style="color: #AA22FF; font-weight: bold">var</span> clickEvent <span style="color: #666666">=</span> <span style="color: #AA22FF; font-weight: bold">function</span> (e) {
+        <span style="color: #008800; font-style: italic">//check if modalbox is defined in data</span>
+        <span style="color: #AA22FF; font-weight: bold">if</span> (e.data) {
+            methods[<span style="color: #BB4444">&#39;close&#39;</span>].call(e.data.modalBox);
+        } <span style="color: #AA22FF; font-weight: bold">else</span> {
+            $.modalBox.close();
+        }
+    };
+    <span style="color: #AA22FF; font-weight: bold">var</span> resizeEvent <span style="color: #666666">=</span> <span style="color: #AA22FF; font-weight: bold">function</span> (e) {
+        <span style="color: #AA22FF; font-weight: bold">var</span> img <span style="color: #666666">=</span> e.data.img,
+            elm <span style="color: #666666">=</span> e.data.elm;
+        img.css({
+            top<span style="color: #666666">:</span> (elm.offset().top <span style="color: #666666">-</span> $(<span style="color: #AA22FF">window</span>).scrollTop() <span style="color: #666666">-</span> <span style="color: #666666">8</span>) <span style="color: #666666">+</span> <span style="color: #BB4444">&#39;px&#39;</span>,
+            left<span style="color: #666666">:</span> (elm.offset().left <span style="color: #666666">-</span> $(<span style="color: #AA22FF">window</span>).scrollLeft() <span style="color: #666666">+</span> elm.width() <span style="color: #666666">-</span> <span style="color: #666666">8</span>) <span style="color: #666666">+</span> <span style="color: #BB4444">&#39;px&#39;</span>,
+            position<span style="color: #666666">:</span> <span style="color: #BB4444">&#39;fixed&#39;</span>,
+            <span style="color: #BB4444">&#39;z-index&#39;</span><span style="color: #666666">:</span> <span style="color: #BB4444">&#39;99999&#39;</span>
+        });
+    }
+    <span style="color: #008800; font-style: italic">//to show overlay</span>
+    <span style="color: #AA22FF; font-weight: bold">var</span> addOverlay <span style="color: #666666">=</span> <span style="color: #AA22FF; font-weight: bold">function</span> () {
+        $(<span style="color: #BB4444">&#39;body&#39;</span>).append(<span style="color: #BB4444">&#39;&lt;div class=&quot;iw-modalOverlay&quot;&gt;&lt;/div&gt;&#39;</span>);
+        $(<span style="color: #BB4444">&#39;.iw-modalOverlay&#39;</span>).css({
+            display<span style="color: #666666">:</span> <span style="color: #BB4444">&#39;block&#39;</span>,
+            width<span style="color: #666666">:</span> <span style="color: #BB4444">&#39;100%&#39;</span>,
+            height<span style="color: #666666">:</span> <span style="color: #BB4444">&#39;100%&#39;</span>,
+            position<span style="color: #666666">:</span> <span style="color: #BB4444">&#39;fixed&#39;</span>,
+            top<span style="color: #666666">:</span> <span style="color: #666666">0</span>,
+            left<span style="color: #666666">:</span> <span style="color: #666666">0</span>,
+            display<span style="color: #666666">:</span> <span style="color: #BB4444">&#39;block&#39;</span>,
+            <span style="color: #BB4444">&#39;z-index&#39;</span><span style="color: #666666">:</span> <span style="color: #BB4444">&#39;1000&#39;</span>
+
+        });
+    }
+
+    <span style="color: #AA22FF; font-weight: bold">var</span> methods <span style="color: #666666">=</span> {
+        open<span style="color: #666666">:</span> <span style="color: #AA22FF; font-weight: bold">function</span> (option) {
+            option <span style="color: #666666">=</span> $.extend({}, $.modalBox.defaults, option);
+
+            <span style="color: #AA22FF; font-weight: bold">var</span> elm <span style="color: #666666">=</span> <span style="color: #AA22FF; font-weight: bold">this</span>,
+                elmWidth <span style="color: #666666">=</span> elm.width(),
+                elmHeight <span style="color: #666666">=</span> elm.height(),
+                elmWidthO <span style="color: #666666">=</span> elm.outerWidth(),
+                elmHeightO <span style="color: #666666">=</span> elm.outerHeight(),
+                windowWidth <span style="color: #666666">=</span> $(<span style="color: #AA22FF">window</span>).width(),
+                windowHeight <span style="color: #666666">=</span> $(<span style="color: #AA22FF">window</span>).height(),
+                width <span style="color: #666666">=</span> option.width <span style="color: #666666">!=</span> <span style="color: #BB4444">&#39;auto&#39;</span> <span style="color: #666666">?</span> option.width <span style="color: #666666">:</span> <span style="color: #AA22FF">Math</span>.min(elmWidthO, windowWidth) <span style="color: #666666">-</span> (elmWidthO <span style="color: #666666">-</span> elmWidth),
+                height <span style="color: #666666">=</span> option.height <span style="color: #666666">!=</span> <span style="color: #BB4444">&#39;auto&#39;</span> <span style="color: #666666">?</span> option.height <span style="color: #666666">:</span> <span style="color: #AA22FF">Math</span>.min(elmHeightO, windowHeight) <span style="color: #666666">-</span> (elmHeightO <span style="color: #666666">-</span> elmHeight);
+
+            <span style="color: #008800; font-style: italic">//to add modalBox class</span>
+            elm.data(<span style="color: #BB4444">&#39;iw-size&#39;</span>, {
+                <span style="color: #BB4444">&#39;width&#39;</span><span style="color: #666666">:</span> elmWidth,
+                <span style="color: #BB4444">&#39;height&#39;</span><span style="color: #666666">:</span> elmHeight
+            })
+                .addClass(<span style="color: #BB4444">&#39;iw-modalBox&#39;</span>)
+                .css({
+                width<span style="color: #666666">:</span> width,
+                height<span style="color: #666666">:</span> height,
+                position<span style="color: #666666">:</span> <span style="color: #BB4444">&#39;fixed&#39;</span>,
+            });
+
+
+            <span style="color: #AA22FF; font-weight: bold">var</span> top <span style="color: #666666">=</span> <span style="color: #BB4444">&#39;50%&#39;</span>,
+                left <span style="color: #666666">=</span> <span style="color: #BB4444">&#39;50%&#39;</span>,
+                marginLeft <span style="color: #666666">=</span> elm.outerWidth() <span style="color: #666666">/</span> <span style="color: #666666">2</span>,
+                marginTop <span style="color: #666666">=</span> elm.outerHeight() <span style="color: #666666">/</span> <span style="color: #666666">2</span>;
+
+            <span style="color: #AA22FF; font-weight: bold">if</span> (option.left <span style="color: #666666">!=</span> <span style="color: #BB4444">&#39;auto&#39;</span>) {
+                left <span style="color: #666666">=</span> option.left;
+                marginLeft <span style="color: #666666">=</span> <span style="color: #BB4444">&#39;0&#39;</span>;
+            }
+            <span style="color: #AA22FF; font-weight: bold">if</span> (option.top <span style="color: #666666">!=</span> <span style="color: #BB4444">&#39;auto&#39;</span>) {
+                top <span style="color: #666666">=</span> option.top;
+                marginTop <span style="color: #666666">=</span> <span style="color: #BB4444">&#39;0&#39;</span>
+            }
+
+            elm.css({
+                top<span style="color: #666666">:</span> top,
+                left<span style="color: #666666">:</span> left,
+                <span style="color: #BB4444">&#39;margin-left&#39;</span><span style="color: #666666">:</span> <span style="color: #666666">-</span>marginLeft,
+                <span style="color: #BB4444">&#39;margin-top&#39;</span><span style="color: #666666">:</span> <span style="color: #666666">-</span>marginTop,
+                <span style="color: #BB4444">&#39;display&#39;</span><span style="color: #666666">:</span> <span style="color: #BB4444">&#39;block&#39;</span>,
+                <span style="color: #BB4444">&#39;z-index&#39;</span><span style="color: #666666">:</span> <span style="color: #BB4444">&#39;99999&#39;</span>
+            });
+
+            <span style="color: #AA22FF; font-weight: bold">if</span> (option.overlay) {
+                addOverlay();
+            }
+
+            <span style="color: #008800; font-style: italic">//to bind close event	</span>
+            <span style="color: #AA22FF; font-weight: bold">if</span> (option.iconClose) {
+                <span style="color: #AA22FF; font-weight: bold">if</span> ((elm.outerWidth() <span style="color: #666666">&lt;</span> (windowWidth <span style="color: #666666">-</span> <span style="color: #666666">50</span>)) <span style="color: #666666">&amp;&amp;</span> (elm.outerHeight() <span style="color: #666666">&lt;</span> (windowHeight <span style="color: #666666">-</span> <span style="color: #666666">50</span>))) {
+                    <span style="color: #AA22FF; font-weight: bold">var</span> randId <span style="color: #666666">=</span> <span style="color: #AA22FF">Math</span>.ceil(<span style="color: #AA22FF">Math</span>.random() <span style="color: #666666">*</span> <span style="color: #666666">1000</span>) <span style="color: #666666">+</span> <span style="color: #BB4444">&#39;close&#39;</span>;
+                    <span style="color: #AA22FF; font-weight: bold">var</span> img <span style="color: #666666">=</span> $(<span style="color: #BB4444">&#39;&lt;img src=&quot;&#39;</span> <span style="color: #666666">+</span> option.iconImg <span style="color: #666666">+</span> <span style="color: #BB4444">&#39;&quot; class=&quot;iw-closeImg&quot; id=&quot;&#39;</span> <span style="color: #666666">+</span> randId <span style="color: #666666">+</span> <span style="color: #BB4444">&#39;&quot;/&gt;&#39;</span>);
+                    elm.attr(<span style="color: #BB4444">&#39;closeImg&#39;</span>, randId);
+                    img.bind(<span style="color: #BB4444">&#39;click&#39;</span>, {
+                        modalBox<span style="color: #666666">:</span> elm
+                    }, clickEvent);
+                    <span style="color: #008800; font-style: italic">//we will add resize event to retain the correct position of close button.</span>
+                    $(<span style="color: #AA22FF">window</span>).bind(<span style="color: #BB4444">&#39;resize&#39;</span>, {
+                        img<span style="color: #666666">:</span> img,
+                        elm<span style="color: #666666">:</span> elm
+                    }, resizeEvent);
+                    $(<span style="color: #AA22FF">window</span>).triggerHandler(<span style="color: #BB4444">&#39;resize&#39;</span>);
+                    $(<span style="color: #BB4444">&#39;body&#39;</span>).append(img);
+                }
+            }
+
+            <span style="color: #AA22FF; font-weight: bold">if</span> (option.keyClose) {
+                $(<span style="color: #BB4444">&#39;html&#39;</span>).bind(<span style="color: #BB4444">&#39;keyup&#39;</span>, keyEvent);
+            }
+
+            <span style="color: #AA22FF; font-weight: bold">if</span> (option.bodyClose) {
+                <span style="color: #008800; font-style: italic">/*create a overlay(or use existing) in which we will give close event to overlay </span>
+<span style="color: #008800; font-style: italic">						and not in the body to come out of bubbling issue */</span>
+                <span style="color: #AA22FF; font-weight: bold">var</span> overlay <span style="color: #666666">=</span> $(<span style="color: #BB4444">&#39;.iw-modalOverlay&#39;</span>);
+                <span style="color: #AA22FF; font-weight: bold">if</span> (overlay.length <span style="color: #666666">==</span> <span style="color: #666666">0</span>) {
+                    addOverlay();
+                    overlay <span style="color: #666666">=</span> $(<span style="color: #BB4444">&#39;.iw-modalOverlay&#39;</span>);
+                    overlay.css({
+                        <span style="color: #BB4444">&#39;background&#39;</span><span style="color: #666666">:</span> <span style="color: #BB4444">&#39;none&#39;</span>
+                    });
+                }
+                overlay.bind(<span style="color: #BB4444">&#39;click&#39;</span>, clickEvent);
+            }
+            <span style="color: #008800; font-style: italic">//call callback function</span>
+            option.onOpen.call(<span style="color: #AA22FF; font-weight: bold">this</span>);
+            elm.data(<span style="color: #BB4444">&#39;closeFun&#39;</span>, option.onClose)
+
+        },
+        close<span style="color: #666666">:</span> <span style="color: #AA22FF; font-weight: bold">function</span> () {
+            <span style="color: #AA22FF; font-weight: bold">var</span> elm <span style="color: #666666">=</span> <span style="color: #AA22FF; font-weight: bold">this</span>;
+            <span style="color: #AA22FF; font-weight: bold">if</span> (elm.data(<span style="color: #BB4444">&#39;iw-size&#39;</span>)) {
+                <span style="color: #008800; font-style: italic">//close modal and unbind all event associated with it.</span>
+                $(<span style="color: #BB4444">&#39;.iw-modalOverlay&#39;</span>).remove()
+                $(<span style="color: #BB4444">&#39;html&#39;</span>).unbind(<span style="color: #BB4444">&#39;keyup&#39;</span>, keyEvent);
+                $(<span style="color: #AA22FF">window</span>).unbind(<span style="color: #BB4444">&#39;resize&#39;</span>, resizeEvent);
+                <span style="color: #AA22FF; font-weight: bold">var</span> imgId <span style="color: #666666">=</span> elm.attr(<span style="color: #BB4444">&#39;closeImg&#39;</span>);
+                <span style="color: #AA22FF; font-weight: bold">if</span> (imgId) {
+                    elm.removeAttr(<span style="color: #BB4444">&#39;closeImg&#39;</span>);
+                    $(<span style="color: #BB4444">&#39;#&#39;</span> <span style="color: #666666">+</span> imgId).remove();
+                }
+                elm.css({
+                    <span style="color: #BB4444">&#39;display&#39;</span><span style="color: #666666">:</span> <span style="color: #BB4444">&#39;none&#39;</span>,
+                    <span style="color: #BB4444">&#39;width&#39;</span><span style="color: #666666">:</span> elm.data(<span style="color: #BB4444">&#39;iw-size&#39;</span>).width,
+                    <span style="color: #BB4444">&#39;height&#39;</span><span style="color: #666666">:</span> elm.data(<span style="color: #BB4444">&#39;iw-size&#39;</span>).height
+                })
+                <span style="color: #008800; font-style: italic">//call callback function</span>
+                elm.data(<span style="color: #BB4444">&#39;closeFun&#39;</span>).call(<span style="color: #AA22FF; font-weight: bold">this</span>);
+
+                <span style="color: #008800; font-style: italic">//restore modal box</span>
+                elm.removeData(<span style="color: #BB4444">&#39;iw-size&#39;</span>)
+                    .removeData(<span style="color: #BB4444">&#39;closeFun&#39;</span>)
+                <span style="color: #008800; font-style: italic">//remove class</span>
+                .removeClass(<span style="color: #BB4444">&#39;iw-modalBox&#39;</span>);
+            }
+
+        }
+    }
+})(jQuery, <span style="color: #AA22FF">window</span>, <span style="color: #AA22FF">document</span>);
+</pre></td></tr></table></div>
+
+
+
+
+
+
+
+
+  </p>
+<br />
+<h3>5. Adding CSS to modal box</h3>
+We have three classes related to modal box.<br />
+<ol>
+<li><span class="highlight">iw-modalBox</span> for modal box.</li>
+<li><span class="highlight">iw-modalOverlay</span> for overlay.</li>
+<li><span class="highlight">iw-closeImg</span> for close icon.</li>
+</ol>
+<br />
+For basic we just need to give css on overlay<br />
+<div style="background: #f8f8f8; overflow:auto;width:auto;color:black;background:white;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">1
+2
+3
+4</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #0000FF">.iw</span> <span style="color: #008000; font-weight: bold">-</span> <span style="color: #008000; font-weight: bold">modalOverlay</span> {
+    <span style="color: #AA22FF; font-weight: bold">background</span><span style="color: #666666">:</span> <span style="color: #666666">#000</span>;
+    <span style="color: #AA22FF; font-weight: bold">opacity</span><span style="color: #666666">:.8</span>;
+}
+</pre></td></tr></table></div>
+<br>
+Using our plugin is quite simple. Lets see some example.<br>
+<div style="background: #f8f8f8; overflow:auto;width:auto;color:black;background:white;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39</pre></td><td><pre style="margin: 0; line-height: 125%">	<span style="color: #008800; font-style: italic">//easist way to open modal box</span>
+	$(<span style="color: #BB4444">&#39;.modalBox&#39;</span>).modalBox();
+
+	<span style="color: #008800; font-style: italic">//calling modalBox with overided size and width options </span>
+
+	$(<span style="color: #BB4444">&#39;.modalBox&#39;</span>).modalBox({
+	    width<span style="color: #666666">:</span> <span style="color: #BB4444">&#39;400px&#39;</span>,
+	    height<span style="color: #666666">:</span> <span style="color: #BB4444">&#39;400px&#39;</span>,
+	    top<span style="color: #666666">:</span> <span style="color: #BB4444">&#39;20%&#39;</span>,
+	    left<span style="color: #666666">:</span> <span style="color: #BB4444">&#39;20%&#39;</span>,
+	});
+
+	<span style="color: #008800; font-style: italic">//calling modalBox with overided close and overlay options </span>
+	$(<span style="color: #BB4444">&#39;.modalBox&#39;</span>).modalBox({
+	    overlay<span style="color: #666666">:</span> <span style="color: #AA22FF; font-weight: bold">true</span>,
+	    iconImg<span style="color: #666666">:</span> <span style="color: #BB4444">&#39;images/basic/x.png&#39;</span>,
+	    keyClose<span style="color: #666666">:</span> <span style="color: #AA22FF; font-weight: bold">true</span>,
+	    iconClose<span style="color: #666666">:</span> <span style="color: #AA22FF; font-weight: bold">true</span>,
+	    bodyClose<span style="color: #666666">:</span> <span style="color: #AA22FF; font-weight: bold">true</span>,
+	});
+
+	<span style="color: #008800; font-style: italic">//calling with callback function and all other options</span>
+	$(<span style="color: #BB4444">&#39;.modalBox&#39;</span>).modalBox({
+	    width<span style="color: #666666">:</span> <span style="color: #BB4444">&#39;400px&#39;</span>,
+	    height<span style="color: #666666">:</span> <span style="color: #BB4444">&#39;400px&#39;</span>,
+	    top<span style="color: #666666">:</span> <span style="color: #BB4444">&#39;20%&#39;</span>,
+	    left<span style="color: #666666">:</span> <span style="color: #BB4444">&#39;20%&#39;</span>,
+	    overlay<span style="color: #666666">:</span> <span style="color: #AA22FF; font-weight: bold">true</span>,
+	    iconImg<span style="color: #666666">:</span> <span style="color: #BB4444">&#39;images/basic/x.png&#39;</span>,
+	    keyClose<span style="color: #666666">:</span> <span style="color: #AA22FF; font-weight: bold">true</span>,
+	    iconClose<span style="color: #666666">:</span> <span style="color: #AA22FF; font-weight: bold">true</span>,
+	    bodyClose<span style="color: #666666">:</span> <span style="color: #AA22FF; font-weight: bold">true</span>,
+	    onOpen<span style="color: #666666">:</span> <span style="color: #AA22FF; font-weight: bold">function</span> () {
+	        alert(<span style="color: #BB4444">&#39;successfully open&#39;</span> <span style="color: #666666">+</span> JSON.stringify(<span style="color: #AA22FF; font-weight: bold">this</span>));
+	    },
+	    onClose<span style="color: #666666">:</span> <span style="color: #AA22FF; font-weight: bold">function</span> () {
+	        alert(<span style="color: #BB4444">&#39;successfully close&#39;</span> <span style="color: #666666">+</span> JSON.stringify(<span style="color: #AA22FF; font-weight: bold">this</span>));
+	    }
+	});
+</pre></td></tr></table></div>
+<!-- Concept defination end'-->
+      </div>
+      </div>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    <div class="modalBox">
+    <img src="images/friendship.jpg" width="100%" height="100%"/>
+    <div class="modalFooter">
+    </div>
+    </div>
+    <div class="modalBox2">
+    <img src="images/friendship.jpg" width="100%" height="100%"/>
+    <div class="modalFooter">
+    <span class="closeAll" onclick="$.modalBox.close()">Close All</span>&nbsp &nbsp; &nbsp; &nbsp;<span class="closeThis" onclick="$('.modalBox2').modalBox('close')">Close this</span>
+    </div>
+    </div>
+
+ 
+  </body>
+  
+</html>
+<script type="text/javascript" src="javascripts/jquery.min.js"></script>
+<script type="text/javascript" src="javascripts/modalBox-min.js"></script>
+<script type="text/javascript" src="javascripts/javascript.js"></script>
+<script type="text/javascript" src="javascripts/modalBoxDemo.js"></script>

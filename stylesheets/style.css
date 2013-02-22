@@ -1,0 +1,97 @@
+/* CSS Document */
+.projectWrap{
+	overflow:auto;
+	clear:both;
+	}
+.projectWrap .projectImg,.projectWrap .projectDesc{
+	padding:10px;
+	float:left;
+	}
+.projectWrap:nth-child(even) .projectImg,.projectWrap:nth-child(even) .projectDesc{
+	float:right;
+	padding:10px;
+	} 
+
+.projectImg{
+	width:300px;
+	}
+.projectDesc{
+	width:480px;
+	}
+.projectHeading{
+	font-size:24px;
+	font-weight:bold;
+	width:90%;
+	float:left;
+	}
+
+.pluginWikiWrap#main_content{
+	max-width:1100px;
+	overflow: auto;
+	}
+
+#nav_Wrap{
+	width:250px;
+	float:left;
+	display:block;
+	position:absolute;
+	}
+	
+#content{
+	width:850px;
+	float:left;
+	display:block;
+	position:relative;
+	left:250px;
+	}
+
+#intro{
+	margin-top:-20px;
+	}
+
+#documentation{
+	width:830px;
+	overflow:auto;
+	margin-top:40px;
+	}	
+
+#demo,#concept{
+	margin-top:40px;
+	}
+
+#concept table{
+	 border-collapse: collapse;
+ 	 border-spacing: 0;
+	 border:0px;
+	}	
+
+#concept td{
+	 border:0px;
+	}
+#nav_Wrap li{
+	list-style:none;
+	width:220px;
+	margin:0px;
+	background:#09F;
+	border-bottom:1px solid #CCC;
+	color:#F4F4F4;
+	cursor:pointer
+	}
+
+#nav_Wrap li.current,#nav_Wrap li:hover{
+	background:#8080FF;
+	}
+
+#nav_Wrap.fixed{
+	position:fixed;
+	top:40px;
+	}	
+
+.downloadplugin{
+	display:inline-block;
+	padding:10px 20px;
+	cursor:pointer;
+	background:#09F;
+	color:#F4F4F4;
+
+	}							

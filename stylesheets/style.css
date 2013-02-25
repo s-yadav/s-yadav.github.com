@@ -1,6 +1,6 @@
 /* CSS Document */
 .projectWrap{
-	overflow:auto;
+	overflow:hidden;
 	clear:both;
 	}
 .projectWrap .projectImg,.projectWrap .projectDesc{
@@ -21,8 +21,9 @@
 .projectHeading{
 	font-size:24px;
 	font-weight:bold;
-	width:90%;
+	width:98%;
 	float:left;
+	text-align:center;
 	}
 
 .pluginWikiWrap#main_content{
@@ -38,7 +39,7 @@
 	}
 	
 #content{
-	width:850px;
+	width:840px;
 	float:left;
 	display:block;
 	position:relative;

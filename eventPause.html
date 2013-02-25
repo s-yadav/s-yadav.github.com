@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="sudhanshu-yadav.github.com : " />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/style.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/eventPauseDemo.css">
+	
+    <title>eventPause.js</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/sudhanshu-yadav">View on GitHub</a>
+
+          <h1 id="project_title"><a href="index.html">Utility plugins</a></h1>
+          <h2 id="project_tagline"></h2>
+
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+	 <section id="main_content" class="inner pluginWikiWrap">
+       <div id="nav_Wrap">
+      <ul>
+      <li id="navIntro" linkId="intro" class="current">Event Pause</li>
+      <li id="navDemo"  linkId="demo">Examples</li>
+      <li id="navDoc"  linkId="documentation">Documentation</li>
+      <li id="navConcept"  linkId="concept" style="display:none">Concept</li>
+     </ul>
+      </div>
+      <div id="content">
+      <div id="intro">
+        <h3>eventPause.js</h3>
+        <p>jQuery gave us much clean and faster way to bind events with  cross browser support, deprecating obtrusive inline event  handler , addEventlistener() and attach event (as they are browser depended).<br>
+It also provided us method to unbind events either by event name or event name  and handler reference.<br>
+<br>
+But there some situation comes where we just want to pause event (or say unbind  it temporally). For that we unbind events and bind it again when we need. <br>
+But this become painful on binding event again when there is no reference of  event handler or you don&rsquo;t have its scope, or you just don&rsquo;t know what event  handlers are assigned to a particular event.</p>
+<p>So  why not have a plugin which can pause any events or group of events  temporarily. <br>
+eventPause.js is perfect plugin that can serve you in this case. It is a simple  and light weight plugin, providing a lot of methods to pause an event  temporarily. You don&rsquo;t need to worry about the event handlers assigned for a  particular event , you just can pause and active it whenever you want.
+</p>
+		<a href="https://github.com/s-yadav/eventPause.js"><div class="downloadplugin">Download</div></a>
+      </div>
+      <div id="demo">
+      <h3>Examples</h3>
+<div class="demoDiv">
+Simple pause and active example
+<div class="testDiv">Click or hover on me</div>
+<input type="button" value="pause" class="pause"/> <input type="button" value="active" class="active"/>
+<pre>
+<code>
+##Pause
+ $('.pause').click(function(e) {
+   $('.testDiv').eventPause();
+  /* OR
+   $('.testDiv').eventPause('pause'); */
+});
+
+#Active
+$('.active').click(function(e) {
+   $('.testDiv').eventPause('active');
+});
+</code>
+</pre>
+</div>
+
+
+<div class="demoDiv">
+Pause/active along with all descendants
+<div class="testDiv">
+Click or hover on me
+<div class="childDiv">Click me</div>
+</div>
+<input type="button" value="pauseChild" class="pauseChild"/> <input type="button" value="activeChild" class="activeChild"/>
+<pre>
+<code>
+##Pause
+ $('.pauseChild').click(function(e) {
+   $('.testDiv').eventPause('pauseChild');
+});
+
+#Active
+$('.activeChild').click(function(e) {
+   $('.testDiv').eventPause('activeChild');
+});
+</code>
+</pre>
+</div>
+
+
+<div class="demoDiv">
+Pause/active specific events<br />
+Hover event is paused so only click event will work after pausing.
+<div class="testDiv">Click or hover on me</div>
+<input type="button" value="pauseEvent" class="pauseEvent"/> <input type="button" value="activeEvent" class="activeEvent"/>
+<pre>
+<code>
+##Pause
+ $('.pauseEvent').click(function(e) {
+   $('.testDiv').eventPause('hover');
+   //can be more than one event by space seperated
+});
+
+#Active
+$('.activeEvent').click(function(e) {
+   $('.testDiv').eventPause('active','hover');
+});
+</code>
+</pre>
+</div>
+
+
+<div class="demoDiv">
+Enable/disable pause and active events
+<br />
+After disable you are not able to pause or active
+<div class="testDiv">Click or hover on me</div>
+<input type="button" value="enable" class="enable"/> <input type="button" value="disable" class="disable"/>
+
+<input type="button" value="pause" class="pause"/> <input type="button" value="active" class="active"/>
+<pre>
+<code>
+##Enable
+ $('.enable').click(function(e) {
+   $('.testDiv').eventPause('enable');
+});
+
+#Disable
+$('.disable').click(function(e) {
+   $('.testDiv').eventPause('disable');
+});
+</code>
+</pre>
+</div>
+<!-- Demo end-->
+      </div>
+      <div id="documentation">
+      <h3>Documentation</h3>
+<!-- Documentation start-->
+<div id="pluginMethod">
+<a href="#pluginMethodEx"><h3>Plugin Methods</h3></a><br />
+<table width="100%" border="1">
+  <thead>
+  <tr>
+    <td width="22%">Method</td>
+    <td width="78%">Description</td>
+  </tr>
+  </thead>
+  <tr>
+    <td>pause</td>
+    <td>Pause an event or group of event of element .</td>
+  </tr>
+  <tr>
+    <td>active</td>
+    <td>Active events of a element.</td>
+  </tr>
+  <tr>
+    <td>pauseChild</td>
+    <td>Pause events of that element along with events of all its descendants  elements.</td>
+  </tr>
+  <tr>
+    <td>activeChild</td>
+    <td>Active events of that element along with events of all its descendants  elements.</td>
+  </tr>
+  <tr>
+    <td>toggle</td>
+    <td>toggle the current state of a element (active to paused , paused to active)</td>
+  </tr>
+  <tr>
+    <td>enable</td>
+    <td>Enable the element to  change the current state. (does not accept second argument)</td>
+  </tr>
+  <tr>
+    <td>disable</td>
+    <td>Disbale the element to change the current state.(does not accept second argument)</td>
+  </tr>
+  <tr>
+    <td>state</td>
+    <td>Give current state of element. It will return four combination ex: paused-enabled means event is paused and state change in enabled. (does not accept second argument)</td>
+  </tr>
+</table>
+</div>
+<div>
+<a href="#globalMethodEx"><h3>Global Methods</h3></a><br />
+<table width="100%" border="1">
+  <thead>
+  <tr>
+    <td width="21%">Method</td>
+    <td width="79%">Description</td>
+  </tr>
+  </thead>
+  <tr>
+    <td>activeAll</td>
+    <td>Active all elements which are paused using eventPause plugin.</td>
+  </tr>
+  <tr>
+    <td>enableAll</td>
+    <td>Enable all the element(in which eventpause plugin is used) to chnage the current state.</td>
+  </tr>
+  <tr>
+    <td>disableAll</td>
+    <td>Disable all the element(in which eventpause plugin is used) to chnage the current state.</td>
+  </tr>
+</table>
+</div>
+<p><br />
+<div id="pluginMethodEx">
+eventPause accept two parameter 1st  method and 2nd events(multiple event space seperated) where both or optional.
+We will see some combination of way in which we can use this plugin. 
+  <h3>Plugin Methods Example</h3><br />
+  <strong>Calling without any parameter.</strong><br />
+  <pre><code>
+  $('.selector').eventPause();
+  </code></pre>
+  It will activate pause mode for all events of selector.<br />
+  <br />
+  <strong>Calling with only event list</strong><br />
+  <pre><code>
+  $('.selector').eventPause('click hover');
+  </code></pre>
+  It will activate toggle mode for click and hover event.<br />
+  <br />
+  <strong>Calling with only method</strong><br />
+   <pre><code>
+  $('.selector').eventPause('pause');
+  </code></pre>
+It will activate pause mode for all events of selector.<br />
+**Other method are also called in same way.
+<br />
+</p>
+<p><strong>Calling with method and event list</strong><br />
+  <pre><code>
+    $('.selector').eventPause('pause','click hover');
+   </code></pre>
+  It will activate pause mode  for click and hover event.<br />
+** enable,disable and state method does not accept second argument.</p>
+</div>
+  <div id="globalMethodEx">
+<h3>Global methods example</h3><br />
+  <strong>Calling global method</strong><br />
+  <pre><code>
+  $.event.activeAll();
+  </code></pre>
+  Global method does not accept any argument.<br />
+</div>
+
+<!--- Documentation end-->
+      </div>
+      <div id="concept" >
+       <!-- Concept defination start-->
+        <h3 style="display:none">Concept</h3>
+		</div>
+      </div>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+ 
+  </body>
+  
+</html>
+<script type="text/javascript" src="javascripts/jquery.min.js"></script>
+<script type="text/javascript" src="javascripts/javascript.js"></script>
+<script type="text/javascript" src="javascripts/eventPause-min.js"></script>
+<script type="text/javascript" src="javascripts/eventPauseDemo.js"></script>

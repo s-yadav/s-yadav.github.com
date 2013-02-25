@@ -46,7 +46,7 @@ $(window).scroll(function(e) {
 	else if((start>globalV.docTop)&&(start<globalV.conceptTop)){
 		globalS.navDoc.addClass('current');
 		}
-	else if(start>globalV.docTop){
+	else if(start>globalV.conceptTop){
 		globalS.navConcept.addClass('current');
 		}
 		

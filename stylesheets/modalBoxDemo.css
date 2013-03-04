@@ -22,4 +22,9 @@ img.iw-closeImg{
 
 .modalFooter span{
 	cursor:pointer;
-	}		
+	}
+
+.iw-modalOverlay{
+	background:#000;
+	opacity:.5;
+	}			

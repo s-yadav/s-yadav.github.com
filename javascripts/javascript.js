@@ -53,9 +53,22 @@ $(window).scroll(function(e) {
 
 });
 
-//to redirect tto page location
+//to redirect to page location
 
 $('li[linkId],div[linkId],span[linkId]').on('click',function(){
 	document.location='#'+$(this).attr('linkId');
 	});
 
+$('#pageNav').find('li').each(function(index, element) {
+    var elm=$(this),
+		subNav=elm.attr('subNav');
+	
+	if(subNav&&(subNav!='')){
+		elm.contextMenu('menu','#'+subNav,{
+			triggerOn:'hover',
+			displayAround:'trigger',
+			position:'right',
+			top:'20px'
+			})
+		}	
+});

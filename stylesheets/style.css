@@ -76,13 +76,18 @@
 	background:#09F;
 	border-bottom:1px solid #CCC;
 	color:#F4F4F4;
-	cursor:pointer
+	cursor:pointer;
+	font-family: 'Segoe UI',Tahoma,Helvetica,Sans-Serif; 
 	}
 
-#nav_Wrap li.current,#nav_Wrap li:hover{
+#nav_Wrap li.current{
 	background:#8080FF;
 	}
 
+#nav_Wrap li:hover{
+	background:#B9B9FF;
+	}
+	
 #nav_Wrap.fixed{
 	position:fixed;
 	top:40px;
@@ -95,4 +100,24 @@
 	background:#09F;
 	color:#F4F4F4;
 
-	}							
+	}
+.subNav{
+	display:none;
+	margin:0px;
+	padding:0px;
+	}
+
+#nav_Wrap ul.subNav li{
+	width:auto;
+	}									
+ul.subNav li{
+	padding:1px 20px 1px 30px;
+	white-space:nowrap;
+	}
+#nav_Wrap li.iw-mSelected{
+	background:#8080FF;
+	}
+
+.demoDiv{
+	clear:both;
+	}																								

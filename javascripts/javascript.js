@@ -68,7 +68,7 @@ $('#pageNav').find('li').each(function(index, element) {
 			triggerOn:'hover',
 			displayAround:'trigger',
 			position:'right',
-			verAdjust:-80
+			verAdjust:-50
 			})
 		}	
 });

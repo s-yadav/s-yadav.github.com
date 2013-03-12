@@ -203,5 +203,10 @@
 			}
 		.fieldCont{
 			clear:both;
-			}				
+			}
+			
+		#tipContainer{
+			display:none;
+			}
+			
 /*Demo css end*/

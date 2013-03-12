@@ -401,6 +401,8 @@ menuTrgr.contextMenu('menu','#demoMenu',{
 	horAdjust:menuTrgr.width(),
 	position:'left'
 	})
+
+
 /*Ninth example End */
 
 /*Tenth example start */

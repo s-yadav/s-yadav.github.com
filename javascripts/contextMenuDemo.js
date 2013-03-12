@@ -398,7 +398,8 @@ $('div,span,img,a').filter(function () {
 var menuTrgr=$('#menuTrigger');
 menuTrgr.contextMenu('menu','#demoMenu',{
 	displayAround:'trigger',
-	horAdjust:-menuTrgr.width()
+	horAdjust:-menuTrgr.width(),
+	position:'left'
 	})
 /*Ninth example End */
 

@@ -423,7 +423,7 @@ var contextMenuSettings={
 	}
 
     $('#trigger').draggable({
-		'containment':'#container'
+			'containment':'#container'
 		});
 	
 		

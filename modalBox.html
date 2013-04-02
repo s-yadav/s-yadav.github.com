@@ -42,7 +42,7 @@
         <h3>modalBox.js</h3>
         <p>Modal window has become a very popular way of showing information in detail, and getting needed input while blocking the main application flow. There are large numbers of attractive plugin available over the internet with lot of options. But the question is do we need that all?          </p>
         <p>Fact is we only use 30 to 40 % of that plugin and for that 30 to 40 % we compromise to use a large size plugin. In internet world size matters a lot. Least the size of your page greater the loading speed.</p>
-        <p> So why not use a plugin which is much smaller and have options which we need the most. modalBox.js is a very light weight plugin <span class="projectDesc">packed with only most used features</span> Its overall size is around 5.3 kb ( 2.5 kb minified).</p>
+        <p> So why not use a plugin which is much smaller and have options which we need the most. modalBox.js is a very light weight plugin <span class="projectDesc">packed with only most used features</span> Its overall size is around 7.05 kb ( 2.7 kb minified).</p>
 		<a href="https://github.com/s-yadav/modalBox.js"><div class="downloadplugin">Download</div></a>
       </div>
       <div id="demo">
@@ -612,7 +612,7 @@ $('.modalBox2').modalBox({
 
 
     <h3>3. Implementing close method.</h3>
-    For   a better user experience we need to give different way to close our   modal box. Even though we will give all as option so user can choose   what he need among them.<br />
+    For   a better user experience we need to give different way to close our   modal box. Even though we will give all as option so user can choose   what he need among them. Remember it is a best practice to namespace your events so it can be easily unbind and trigger later.<br />
     <ul>
     <li><strong> A close button on the top right corner.</strong>
       <ul>
@@ -658,7 +658,7 @@ $('.modalBox2').modalBox({
 <p>*Inside a callback function this will point to selector jquery object.<br />
     <br />
   </p>
-<div style="background: #f8f8f8; overflow:auto;width:auto;color:black;background:white;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">  1
+<div  class="code" style="background: #f8f8f8; overflow:auto;width:auto;color:black;background:white;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">  1
   2
   3
   4
@@ -1014,17 +1014,17 @@ $('.modalBox2').modalBox({
                         modalBox<span style="color: #666666">:</span> elm
                     }, clickEvent);
                     <span style="color: #008800; font-style: italic">//we will add resize event to retain the correct position of close button.</span>
-                    $(<span style="color: #AA22FF">window</span>).bind(<span style="color: #BB4444">&#39;resize&#39;</span>, {
+                    $(<span style="color: #AA22FF">window</span>).bind(<span style="color: #BB4444">&#39;resize.iw-modalBox&#39;</span>, {
                         img<span style="color: #666666">:</span> img,
                         elm<span style="color: #666666">:</span> elm
                     }, resizeEvent);
-                    $(<span style="color: #AA22FF">window</span>).triggerHandler(<span style="color: #BB4444">&#39;resize&#39;</span>);
+                    $(<span style="color: #AA22FF">window</span>).triggerHandler(<span style="color: #BB4444">&#39;resize.iw-modalBox&#39;</span>);
                     $(<span style="color: #BB4444">&#39;body&#39;</span>).append(img);
                 }
             }
 
             <span style="color: #AA22FF; font-weight: bold">if</span> (option.keyClose) {
-                $(<span style="color: #BB4444">&#39;html&#39;</span>).bind(<span style="color: #BB4444">&#39;keyup&#39;</span>, keyEvent);
+                $(<span style="color: #BB4444">&#39;html&#39;</span>).bind(<span style="color: #BB4444">&#39;keyup.iw-modalBox&#39;</span>, keyEvent);
             }
 
             <span style="color: #AA22FF; font-weight: bold">if</span> (option.bodyClose) {
@@ -1050,8 +1050,8 @@ $('.modalBox2').modalBox({
             <span style="color: #AA22FF; font-weight: bold">if</span> (elm.data(<span style="color: #BB4444">&#39;iw-size&#39;</span>)) {
                 <span style="color: #008800; font-style: italic">//close modal and unbind all event associated with it.</span>
                 $(<span style="color: #BB4444">&#39;.iw-modalOverlay&#39;</span>).remove()
-                $(<span style="color: #BB4444">&#39;html&#39;</span>).unbind(<span style="color: #BB4444">&#39;keyup&#39;</span>, keyEvent);
-                $(<span style="color: #AA22FF">window</span>).unbind(<span style="color: #BB4444">&#39;resize&#39;</span>, resizeEvent);
+                $(<span style="color: #BB4444">&#39;html&#39;</span>).unbind(<span style="color: #BB4444">&#39;keyup.iw-modalBox&#39;</span>);
+                $(<span style="color: #AA22FF">window</span>).unbind(<span style="color: #BB4444">&#39;resize.iw-modalBox&#39;</span>);
                 <span style="color: #AA22FF; font-weight: bold">var</span> imgId <span style="color: #666666">=</span> elm.attr(<span style="color: #BB4444">&#39;closeImg&#39;</span>);
                 <span style="color: #AA22FF; font-weight: bold">if</span> (imgId) {
                     elm.removeAttr(<span style="color: #BB4444">&#39;closeImg&#39;</span>);

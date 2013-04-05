@@ -688,11 +688,15 @@
             if (textBox.length == 0) {
                 $('body').append('<input type="text" id="iw-tempTxt" />');
                 $('#iw-tempTxt').css({
-                    'position': 'fixed',
-                    'bottom': '0px',
-					'width':'1px',
+                    position: 'fixed',
+                    bottom: '0px',
+					'max-width':'1px',
+					'max-height':'1px',
 					'font-size':'1px',
-					'border':'0px'
+					border:'0px',
+					left:'0px',
+					opacity:'.1',
+					padding:'0px'
                 });
             }
 

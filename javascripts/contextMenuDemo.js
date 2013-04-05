@@ -377,7 +377,7 @@ $('div,span,img,a').filter(function () {
 }).each(function (index, element) {
     var title = this.title,
         titleId = parseInt(Math.random() * 100000),
-        tiltleDiv = $('<div class="titleDiv" titleId="' + titleId + '">' + title + '</div>');
+        tiltleDiv = $('<div class="titleDiv" style="display:none" titleId="' + titleId + '">' + title + '</div>');
 
     $('#tipContainer').append(tiltleDiv);
     $(this).attr({

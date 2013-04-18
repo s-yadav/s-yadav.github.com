@@ -217,34 +217,22 @@ $('#override').click(function(e) {
 var validator={
 		//to check required parameter
 		required:function(str){
-			if(str==""){
-				return false;
-				}
-			return true;	
+			return str==""?false:true;
 			},
 		//to check special character is present in a string
 		sCharPresent:function(str){
 			var iChars=/(?=.*[!@#$%^&*\"\[\]\^\\])/;
-				  if(iChars.test(str)){
-					return true;
-				  }
-				  return false;
+				 return iChars.test(str);
 			},
 		//to check if string contain number
 		numPresent:function(str){
 			var iChars=/(?=.*[0-9])/;
-				  if(iChars.test(str)){
-					return true;
-				  }
-				  return false;
+				  return iChars.test(str);
 			},
 		
 		//to check min charact
 		checkMinChar:function(str,ln){
-			if(str.length<ln){
-				return false;
-				}
-			return true;	
+			return str.length<ln?false:true;
 			},
 			
 		// validation common task

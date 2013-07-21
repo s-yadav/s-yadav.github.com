@@ -1,5 +1,5 @@
 /*
- *contextMenu.js v 1.0.0 Beta
+ *contextMenu.js v 1.0.2 Beta
  *Author: Sudhanshu Yadav
  *s-yadav.github.com
  *Copyright (c) 2013 Sudhanshu Yadav.
@@ -269,7 +269,7 @@
 
             //to close previous open menu.
             if (!btChck) {
-                $('.iw-contextMenu[menuId="' + menuData.menuId + '"]').css('display', 'none');
+                $('.iw-contextMenu').css('display', 'none');
             }
 
             //call open callback
@@ -461,14 +461,14 @@
             }
 
             $(document.documentElement).unbind('keyup', iMethods.keyEvent);
-            $('body').unbind('click', iMethods.clickEvent);
+            $(document).unbind('click', iMethods.clickEvent);
             var dataParm = {
                 trigger: trigger,
                 menu: menu,
                 option: option,
                 method: trgrData.method
             }
-            $('body').click(dataParm, iMethods.clickEvent);
+            $(document).click(dataParm, iMethods.clickEvent);
             $(document.documentElement).keyup(dataParm, iMethods.keyEvent);
             if (option.winEventClose) {
                 $(window).bind('scroll resize', dataParm, iMethods.scrollEvent);
@@ -565,7 +565,7 @@
 
             //unbind all events from top DOM
             $(document.documentElement).unbind('keyup', iMethods.keyEvent);
-            $('body').unbind('click', iMethods.clickEvent);
+            $(document).unbind('click', iMethods.clickEvent);
             $(window).unbind('scroll resize', iMethods.scrollEvent);
             $('.iw-contextMenu').hide();
             $(document).focus();
@@ -706,6 +706,7 @@
             }
             if (method == 'menu') {
                 if (!option.mouseClick) {
+
                     option.mouseClick = 'right';
                 }
             }

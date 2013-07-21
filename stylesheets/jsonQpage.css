@@ -1,0 +1,20 @@
+/* CSS Document */
+h2{margin-top:40px;}
+
+#methods{margin-top:40px;}
+#methods li{list-style:none; margin-bottom:10px;}
+
+.method-example{
+	display:none;
+	}
+/*method css*/
+.syntax,.return{font-weight:bold;}
+
+.param-desc{margin-bottom:10px;}
+.params-label{font-weight:bold; margin-top:20px;}
+
+.param-name{
+	font-weight:bold;
+	}
+.example-trigger{
+	font-size:18px; }	

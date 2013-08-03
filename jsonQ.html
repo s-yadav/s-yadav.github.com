@@ -1093,7 +1093,7 @@ family.find('daughters').appendAt(1, newDaughter);
                 setPathValue
               </h3>
               <div class="method-desc">
-                It set value for a specified path in json.
+                It set value for a specified path in JSON object.
               </div>
               <div class="method-syntax">
                 <span class="syntax">Syntax</span>:  .setPathValue(path,value)
@@ -1201,7 +1201,7 @@ Thomas Lee  50
                 sort
               </h3>
               <div class="method-desc">
-                It sort the json in basis of specified key and settings (options).
+                It sort the JSON object in basis of specified key and settings (options).
               </div>
               <div class="method-syntax">
                 <span class="syntax">Syntax</span>:  .sort(key,settings)
@@ -1212,7 +1212,7 @@ Thomas Lee  50
                 <span class="param-name">
                   key(string)
                 </span>
-                :key in which basis you want to sort a json. <br>
+                :key in which basis you want to sort a JSON object. <br>
 
                 <span class="param-name">
                   settings(object)
@@ -1228,7 +1228,7 @@ Thomas Lee  50
                     caseIgnore (Boolean , dafault to TRUE) : If true sort by case insensitive else if false sort by case sensitive. 
                   </li>
                   <li>
-                    allLevel (Boolean , dafault to TRUE) : If json is of multilevel array and allLevel is TRUE It will sort all level recursively else only sort those array where key is found. 
+                    allLevel (Boolean , dafault to TRUE) : If JSON object is of multilevel array and allLevel is TRUE It will sort all level recursively else only sort those array where key is found. 
                   </li>
                   <li>
                     logic (function) : A conversion logic which convert the comparison data to some other data which will be finally compared for sorting.
@@ -1397,7 +1397,7 @@ console.log(value);
                     If elm is a function than each element of current set in jsonQ object will be passed on function to check weather it is satisfying qualifier condition or not.
                   </li>
                   <li>
-                    If current set of jsonQ object is an array of json object and elem is key value pair. Then the index of first element of current set which have key value pair defined in qualifier will be returned.
+                    If current set of jsonQ object is an array of JSON object and elem is key value pair. Then the index of first element of current set which have key value pair defined in qualifier will be returned.
                   </li>
                   <li>
                     If current set of jsonQ object is an array of array and elem is array or string. Then the index of first element of current set which have all elements of qualifier will be returned.
@@ -1479,7 +1479,7 @@ console.log(name.path());
                 pathValue
               </h3>
               <div class="method-desc">
-                Return value of specified path of a json.
+                Return value of specified path of a JSON object.
               </div>
               <div class="method-syntax">
                 <span class="syntax">Syntax</span>:  .pathValue(path)
@@ -1490,7 +1490,7 @@ console.log(name.path());
                 <span class="param-name">
                   path (array)
                 </span>
-                : A path array which contains all key to reach a particular value in json.
+                : A path array which contains all key to reach a particular value in JSON object.
               </div>
               <a href="" class="example-trigger">
                 Example
@@ -1773,7 +1773,7 @@ var namePr= name.prettify(true);
                 each
               </h3>
               <div class="method-desc">
-                : Loop on each element of json or array and return it on callback function.
+                : Loop on each element of JSON object or array and return it on callback function.
               </div>
               <div class="method-syntax">
                 <span class="syntax">Syntax</span>:  jsonQ.each(json,callback)
@@ -1784,7 +1784,7 @@ var namePr= name.prettify(true);
               	<span class="param-name">
                   json
                 </span>
-                :a json which you want to loop
+                :a JSON object which you want to loop
                 <span class="param-name">
                   callback(boolean , dafault to false);
                 </span>
@@ -1873,26 +1873,26 @@ jsonQ.objType(testJson.c);
                 merge
               </h3>
               <div class="method-desc">
-                : Merge the contents of two or more json together into the first json.
+                : Merge the contents of two or more JSON object together into the first JSON object.
               </div>
               <div class="method-syntax">
                 <span class="syntax">Syntax</span>:  jsonQ.objType([deep],target,[json1] [,jsonN])
                 <br>
-				<span class="return">Return</span>:  target json with all other objects merged on it.
+				<span class="return">Return</span>:  target JSON object with all other objects merged on it.
               </div>
               <div class="param-desc"><div class="params-label">Parameters</div>
               	<span class="param-name">
                   deep (boolean)
                 </span>
-                : If true, the merge becomes recursive to all level (if there any other json in down the hierarichy of a json).
+                : If true, the merge becomes recursive to all level (if there any other JSON object in down the hierarichy of a JSON object).
               	<span class="param-name">
                   target
                 </span>
-                : Target json in which merge will happen.
+                : Target JSON object in which merge will happen.
                 <span class="param-name">
                   json1 - jsonN
                 </span>
-                : n number of objects you want to merge on target json.
+                : n number of objects you want to merge on target JSON object.
               </div>
               <a href="" class="example-trigger">
                 Example
@@ -1941,7 +1941,7 @@ jsonQ.merge(true, testJson, testJson2);
 
 
 jsonQ.merge({}, testJson, testJson2);
-//will store merged json(testJson and testJson2) in new object
+//will store merged JSON object(testJson and testJson2) in new object
 </code>
 </pre>
                 
@@ -1965,7 +1965,7 @@ jsonQ.merge({}, testJson, testJson2);
                 <span class="param-name">
                   array(array)
                 </span>
-                :Array you want to sort. It can be array of string or array of json objects.
+                :Array you want to sort. It can be array of string or array of JSON objects.
                 <span class="param-name">
                   settings(object)
                 </span>
@@ -2034,18 +2034,18 @@ console.log(person);
                 order
               </h3>
               <div class="method-desc">
-                order a json (keep all key of json in proper series) recursively for all level .
+                order a JSON object (keep all key of JSON object in proper series) recursively for all level .
               </div>
               <div class="method-syntax">
                 <span class="syntax">Syntax</span>:  jsonQ.order(json)
                 <br>
-				<span class="return">Return</span>:  ordered json.
+				<span class="return">Return</span>:  ordered JSON object.
               </div>
               <div class="param-desc"><div class="params-label">Parameters</div>
               	<span class="param-name">
                   json
                 </span>
-                : json which you want to order.
+                : JSON object which you want to order.
               </div>
               <a href="" class="example-trigger">
                 Example
@@ -2085,18 +2085,18 @@ console.log(jsonQ.prettify(testJson));
                 clone
               </h3>
               <div class="method-desc">
-                clones a json object .
+                clones a JSON object object .
               </div>
               <div class="method-syntax">
                 <span class="syntax">Syntax</span>:  jsonQ.clone(json)
                 <br>
-				<span class="return">Return</span>:  duplicate json.
+				<span class="return">Return</span>:  duplicate JSON object.
               </div>
               <div class="param-desc"><div class="params-label">Parameters</div>
               	<span class="param-name">
                   json
                 </span>
-                : json which you want to clone.
+                : JSON object which you want to clone.
               </div>
               <a href="" class="example-trigger">
                 Example
@@ -2164,7 +2164,7 @@ some
                     If elm is a function than each element of array will be passed on function to check weather it is satisfying qualifier condition or not.
                   </li>
                   <li>
-                    If array is an array of json object and elem is key value pair. Then the index of first element of array which have key value pair defined in qualifier will be returned.
+                    If array is an array of JSON object and elem is key value pair. Then the index of first element of array which have key value pair defined in qualifier will be returned.
                   </li>
                   <li>
                     If array is an array of array and elem is array or string. Then the index of first element of array which have all elements of qualifier will be returned.
@@ -2233,7 +2233,7 @@ var index = jsonQ.index(tempAry, function () {
                     If elm is a function than each element of array will be passed on function to check weather it is satisfying qualifier condition or not.
                   </li>
                   <li>
-                    If array is an array of json object and elem is key value pair, then if any of element of array have key value pair defined in qualifier , method will return true.
+                    If array is an array of JSON object and elem is key value pair, then if any of element of array have key value pair defined in qualifier , method will return true.
                   </li>
                   <li>
                     If array is an array of array and elem is array or string, then if any of element of array have all elements of qualifier, method will return true.
@@ -2345,7 +2345,7 @@ var result = jsonQ.nthElm(tempAry, '2n*n');
                 prettify
               </h3>
               <div class="method-desc">
-                Return a pretty string of specified json to be display in console or html.
+                Return a pretty string of specified JSON object to be display in console or html.
               </div>
               <div class="method-syntax">
                 <span class="syntax">Syntax</span>:  .prettify(json,[htmlReturn])
@@ -2356,7 +2356,7 @@ var result = jsonQ.nthElm(tempAry, '2n*n');
               	<span class="param-name">
                   json(json object)
                 </span>
-                : json object you want to pretty.
+                : JSON object you want to pretty.
                 
               	<span class="param-name">
                   htmlReturn(boolean)
@@ -2386,7 +2386,7 @@ var prettified = jsonQ.prettify(tempAry,true) ;
                 identical
               </h3>
               <div class="method-desc">
-                check two json are identical or not.
+                check two JSON object are identical or not.
               </div>
               <div class="method-syntax">
                 <span class="syntax">Syntax</span>:  jsonQ.identical(json1,json2)
@@ -2397,7 +2397,7 @@ var prettified = jsonQ.prettify(tempAry,true) ;
               	<span class="param-name">
                   json1,json2
                 </span>
-                : two json which you want to compare.
+                : two JSON object which you want to compare.
                 
               </div>
               <a href="" class="example-trigger">
@@ -2581,11 +2581,11 @@ var result = jsonQ.unique(array);
                 <span class="param-name">
                   json 
                 </span>
-                : Json from which you want to get data.
+                : JSON object from which you want to get data.
                 <span class="param-name">
                   path (array)
                 </span>
-                : A path array which contains all key to reach a particular value in json.
+                : A path array which contains all key to reach a particular value in JSON object.
               </div>
               <a href="" class="example-trigger">
                 Example
@@ -2610,7 +2610,7 @@ console.log(jsonQ.pathValue(tempJson,["person", "0", "name"]));
                 setPathValue
               </h3>
               <div class="method-desc">
-                It set value for a specified path in json.
+                It set value for a specified path in JSON object.
               </div>
               <div class="method-syntax">
                 <span class="syntax">Syntax</span>:  jsonQ.setPathValue(json,path,value)
@@ -2621,7 +2621,7 @@ console.log(jsonQ.pathValue(tempJson,["person", "0", "name"]));
 				<span class="param-name">
                   json 
                 </span>
-                : Json to which you want to set data.
+                : JSON object to which you want to set data.
                 
                 <span class="param-name">
                   path(array)
@@ -2659,7 +2659,7 @@ console.log(tempJson.person[0].name);
                 createXML
               </h3>
               <div class="method-desc">
-                Convert json in a xml format.
+                Convert JSON object in a xml format.
               </div>
               <div class="method-syntax">
                 <span class="syntax">Syntax</span>:  jsonQ.createXML(json)
@@ -2670,7 +2670,7 @@ console.log(tempJson.person[0].name);
 				<span class="param-name">
                   json 
                 </span>
-                : Json of which you want xml.
+                : JSON object of which you want xml.
               </div>
               <a href="" class="example-trigger">
                 Example

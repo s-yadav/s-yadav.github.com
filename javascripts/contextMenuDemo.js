@@ -95,7 +95,7 @@ var menu2 = [{
 /*Third example start*/
 $('#testButton3').contextMenu('#popupMenu');
 $('.popupClose').click(function(e) {
-    $(this).closest('.iw-contextMenu').css('display','none');
+   $('#testButton3').contextMenu('close');
 });
 $('.popMenuDoc').click(function(e) {
     document.location="#popMenuDoc";

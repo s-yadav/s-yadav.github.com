@@ -121,4 +121,26 @@ ul.subNav li{
 
 .demoDiv{
 	clear:both;
-	}																								
+	}
+
+#impNotice{
+	position:fixed;
+	top:5px;
+	padding:1px;
+	background:#D50000;
+	color:#fff;
+	width:500px;
+	padding:10px;
+	left:50%;
+	margin-left:-250px;
+	color:#fff;
+	text-align:center;
+	z-index:10000;
+	}
+
+#impNotice a{
+	color:#fff;
+	}
+#impNotice a:hover{
+	text-decoration:underline;
+	}																											

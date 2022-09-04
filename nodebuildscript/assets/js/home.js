@@ -1,1 +1,0 @@
-$(function(){$("body").scrollspy({target:"#contentNav",offset:100}),$(window).scroll(function(e){var t=$(this).scrollTop();t>150?jqOb("#contentNav").addClass("fixed"):jqOb("#contentNav").removeClass("fixed")}),$(window).on("hashchange",function(e){setTimeout(function(){$(this).scrollTop($(this).scrollTop()-90)},0)})});
